@@ -1,24 +1,40 @@
-# README
+## 目次
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. [プロジェクトについて](#プロジェクトについて)
+2. [環境](#環境)
+3. [開発環境構築](#開発環境構築)
 
-Things you may want to cover:
+## プロジェクトについて
+Railsアプリケーション のテンプレート
 
-* Ruby version
+## 環境
+| 言語・フレームワーク  | バージョン |
+| --------------------- | ---------- |
+| ruby                  | 3.2.2      |
+| rails                 | 7.0.8      |
+| postgresql            | 12         |
 
-* System dependencies
+## 開発環境構築
+### リポジトリのクローン
+```
+git clone https://github.com/kei-shibainu/rails-docker.git
+```
 
-* Configuration
+### dockerイメージのビルド
+```
+docker compose up --build -d
+```
 
-* Database creation
+### コンテナ内に移動
+```
+docker compose exec web bash
+```
 
-* Database initialization
+### データベースの作成及びマイグレーションの実施
+```
+rails db:create
+rails db:migrate
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### アプリケーションの起動確認
+`http://localhost:3000` にアクセスする。
